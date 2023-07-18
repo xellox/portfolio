@@ -40,98 +40,32 @@ function sendEmail(){
 
 
 
-    // Vanilla JavaScript solution
-document.addEventListener('DOMContentLoaded', function() {
-    var animateOnScrollElements = document.querySelectorAll('.animate-on-scroll-right');
-  
-    function isElementInViewport(element) {
-      var rect = element.getBoundingClientRect();
-      return (
-        rect.top >= -180 &&
-        rect.left >= -180 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
-  
-    function animateOnScroll() {
-      for (var i = 0; i < animateOnScrollElements.length; i++) {
-        var element = animateOnScrollElements[i];
-        if (isElementInViewport(element)) {
-          element.classList.add('show');
-        } else{
-            element.classList.remove('show')
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+      var animateOnScrollElements = document.querySelectorAll('.animate-on-scroll-scale, .animate-on-scroll-left, .animate-on-scroll-right');
+    
+      function animateOnScroll(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          } else {
+            entry.target.classList.remove('show');
+          }
+        });
       }
-    }
-  
-    animateOnScroll();
-    window.addEventListener('scroll', animateOnScroll);
-  });
+    
+      var observer = new IntersectionObserver(animateOnScroll, { threshold: 0.5 });
+    
+      animateOnScrollElements.forEach(function(element) {
+        observer.observe(element);
+      });
+    });
     
 
 
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var animateOnScrollElements = document.querySelectorAll('.animate-on-scroll-left');
-    
-    function isElementInViewport(element) {
-      var rect = element.getBoundingClientRect();
-      return (
-        rect.top >= -180 &&
-        rect.left >= -180 &&
-        rect.bottom <= ((window.innerHeight )|| document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
+     // Function to scroll to the top of the page
+     function scrollToTop() {
+      window.scrollTo(0, 0);
     }
-  
-    function animateOnScroll() {
-      for (var i = 0; i < animateOnScrollElements.length; i++) {
-        var element = animateOnScrollElements[i];
-        if (isElementInViewport(element)) {
-          element.classList.add('show');
-        } else {
-            element.classList.remove('show')
-            
-           }
-      }
-    }
-  
-    animateOnScroll();
-    window.addEventListener('scroll', animateOnScroll);
-  });
-    
 
-
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var animateOnScrollElements = document.querySelectorAll('.animate-on-scroll-scale');
-  
-    function isElementInViewport(element) {
-      var rect = element.getBoundingClientRect();
-      return (
-        rect.top >= -180 &&
-        rect.left >= -180 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
-  
-    function animateOnScroll() {
-      for (var i = 0; i < animateOnScrollElements.length; i++) {
-        var element = animateOnScrollElements[i];
-        if (isElementInViewport(element)) {
-          element.classList.add('show');
-          links.classList.toggle(".open")
-        } else {
-            element.classList.remove('show')
-            
-        }
-      }
-    }
-  
-    animateOnScroll();
-    window.addEventListener('scroll', animateOnScroll);
-  });
-    
+    // Add an event listener to the page load event
+    window.addEventListener('load', scrollToTop);
