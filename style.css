@@ -359,7 +359,7 @@ h1 {
 }
 
 .first-project {
-  background-image: url("/images/budgetProject.png");
+  background-image: url("./images/budgetProject.png");
   background-size: 450px 500px;
   background-repeat: no-repeat;
   height: 500px;
@@ -367,12 +367,12 @@ h1 {
 }
 
 .second-project {
-  background-image: url("/images/weatherProject.png");
+  background-image: url("./images/weatherProject.png");
   background-size: contain;
 }
 
 .third-project {
-  background-image: url("/images/coffeeProject.png");
+  background-image: url("./images/coffeeProject.png");
   background-size: contain;
 }
 
