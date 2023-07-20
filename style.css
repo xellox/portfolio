@@ -55,6 +55,70 @@ body {
   cursor: pointer;
 }
 
+.hamburger{
+  display:none;
+  cursor: pointer;
+}
+
+.bar{
+  display:block;
+  width:25px;
+  height: 3px;
+  margin:5px auto;
+  -webkit-transition: all 0.2s ease-in-out;
+  background-color: white;
+}
+
+.hamburger-nav{
+  display:none;
+  position: relative;
+  flex-direction: column;
+  position: fixed;
+  top:75px;
+  background-color: rgb(21, 21, 21);
+  z-index: 999;
+  font-size: 16px;
+}
+
+.hamburger-nav.active{
+  display:flex;
+  animation: test 0.3s ease;
+}
+
+
+@keyframes test {
+  0%{
+    opacity: 0;
+    transform:scale(0);
+    top:0px;
+    left:50%
+  }
+
+  100%{
+    opacity: 1;
+    transform:scale(1);
+    top:75px;
+    left:0
+  }
+  
+}
+.hamburger-nav a{
+  color:white;
+  text-decoration: none;
+}
+.hamburger-nav span{
+  width:100vw;
+  display:flex;
+  justify-content: center;
+  border-bottom:1px solid rgb(11, 11, 11);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.hamburger-nav a:hover{
+  color: var(--blue-color);
+}
+
 #hello {
   background: rgb(22, 26, 30);
   background: linear-gradient(
@@ -190,12 +254,13 @@ h1 {
 
 .about-tech {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+ 
   gap: 50px;
 }
 
 .about-tech .about-me {
-  width: 60vw;
+  width: 60vw
 }
 
 .about-me {
@@ -706,3 +771,29 @@ textarea:valid ~ label {
   opacity: 1;
   transform: translateZ(0)
 }
+
+
+
+@media(max-width:768px){
+  .nav-items{
+    display:none;
+  }
+  .hamburger{
+    display:block
+  }
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(135deg);
+
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-135deg);
+
+  }
+
+
+
+}
+
