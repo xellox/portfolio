@@ -82,16 +82,16 @@ body {
 
 .hamburger-nav.active{
   display:flex;
-  animation: test 0.3s ease;
+  animation: hamburger 0.3s ease;
 }
 
 
-@keyframes test {
+@keyframes hamburger {
   0%{
     opacity: 0;
     transform:scale(0);
-    top:0px;
-    left:50%
+    top:-20px;
+    left:45%
   }
 
   100%{
@@ -193,7 +193,7 @@ h1 {
 
 .png-text {
   font-size: 140px;
-  line-height: 125px;
+  line-height:120px;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -203,7 +203,7 @@ h1 {
   top: 80px;
   right: 0;
   color: #272a2e;
-  direction: rtl;
+  direction:rtl;
   user-select: none;
 }
 
@@ -421,24 +421,27 @@ h1 {
   background-color: rgb(23, 23, 23);
   height: 240px;
   width: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .first-project {
   background-image: url("./images/budgetProject.png");
-  background-size: 450px 500px;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   height: 500px;
   width: 450px;
 }
 
 .second-project {
   background-image: url("./images/weatherProject.png");
-  background-size: contain;
+
 }
 
 .third-project {
   background-image: url("./images/coffeeProject.png");
-  background-size: contain;
 }
 
 .grey-bg {
@@ -451,6 +454,7 @@ h1 {
   transition: opacity 0.2s ease-in-out;
   justify-content: center;
   align-items: center;
+  
 }
 
 .grey-bg:hover {
@@ -797,3 +801,139 @@ textarea:valid ~ label {
 
 }
 
+@media(max-width:900px){
+  .column-project .project{
+    height: 190px;
+    width:300px;
+  }
+
+  .first-project{
+    height: 400px;
+    width: 350px;
+  }
+
+  .grey-bg{
+    width:350px;
+    height: 400px;
+  }
+
+  .grey-small{
+    width:300px;
+    height: 190px;
+  }
+
+  .grey-small .description, .grey-small .technologies-used, .grey-small .links{
+    transform: scale(0.9);
+  }
+
+  .grey-small .project-description{
+    padding: 5px;
+    gap:5px;
+  }
+  .grey-small .links {
+    margin-top:0px;
+  }
+
+  .about-tech .about-me{
+    width:75dvw;
+  }
+.png-text{
+  font-size: 120px;
+  line-height:100px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  font-weight: 800;
+  font-family: Poppins;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  color: #272a2e;
+  direction:rtl;
+  user-select: none;
+ }
+}
+
+@media(max-width:700px){
+
+  .column-project .project {
+    height: 400px;
+    width: 350px;
+  }
+
+  .projects-grid{
+    display:flex;
+    flex-direction: column;
+  }
+
+  .grey-small{
+    width:350px;
+    height: 400px;
+  }
+
+  
+  .grey-small .description, .grey-small .technologies-used, .grey-small .links{
+    transform: scale(1);
+  }
+
+  .grey-small .project-description{
+    padding: 15px;
+    gap:20px;
+  }
+  .grey-small .links {
+    margin-top:10px;
+  }
+
+  .png-text{
+    font-size: 110px;
+    line-height:130px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    font-weight: 800;
+    font-family: Poppins;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    color: #272a2e;
+    direction:rtl;
+    user-select: none;
+    rotate:45deg
+  }
+
+}
+
+@media(max-width:400px){
+  .column-project .project {
+    height: 350px;
+    width: 290px;
+  }
+
+  .first-project{
+    height: 350px;
+    width: 290px;
+  }
+
+  .grey-bg{
+    width:290px;
+    height: 350px;
+  }
+
+  .png-text {
+    font-size: 100px;
+    line-height:80px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    font-weight: 800;
+    font-family: Poppins;
+    position: absolute;
+    top: -115px;
+    right: 50%;
+    left: 50%;
+    color: #272a2e;
+    direction:ltr;
+    rotate: 90deg;
+    user-select: none;
+  }
+}
