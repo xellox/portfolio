@@ -177,6 +177,10 @@ h1 {
   margin-top: 10px;
 }
 
+.hi-buttons a {
+  text-decoration: none;
+}
+
 .hi-buttons div {
   background-color: var(--blue-color);
   border-radius: 2px;
