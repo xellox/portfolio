@@ -11,6 +11,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  
 }
 body {
   background-color: var(--black-color);
@@ -66,6 +67,7 @@ body {
   height: 3px;
   margin:5px auto;
   -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   background-color: white;
 }
 
@@ -102,6 +104,8 @@ body {
   }
   
 }
+
+
 .hamburger-nav a{
   color:white;
   text-decoration: none;
@@ -126,6 +130,7 @@ body {
     rgba(22, 26, 30, 1) -10%,
     rgba(27, 31, 36, 1) 50%
   );
+  overflow-X: -moz-hidden-unscrollable;
 }
 
 .container-wrapper {
@@ -133,6 +138,7 @@ body {
   position: relative;
   align-items: center;
   padding: 270px 0 150px 7%;
+  overflow: hidden;
 }
 
 .hello-wrapper {
@@ -140,6 +146,7 @@ body {
   position: relative;
   flex-direction: column;
   z-index: 2;
+
 }
 
 .hi {
@@ -195,7 +202,6 @@ h1 {
   font-size: 140px;
   line-height:120px;
   display: flex;
-  position: relative;
   flex-direction: column;
   font-weight: 800;
   font-family: Poppins;
@@ -839,7 +845,7 @@ textarea:valid ~ label {
   }
 .png-text{
   font-size: 120px;
-  line-height:100px;
+  line-height:110px;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -851,6 +857,7 @@ textarea:valid ~ label {
   color: #272a2e;
   direction:rtl;
   user-select: none;
+
  }
 }
 
@@ -884,23 +891,17 @@ textarea:valid ~ label {
     margin-top:10px;
   }
 
-  .png-text{
-    font-size: 110px;
-    line-height:130px;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    font-weight: 800;
-    font-family: Poppins;
-    position: absolute;
-    top: 0px;
-    right: 0;
-    color: #272a2e;
-    direction:rtl;
-    user-select: none;
-    rotate:45deg
+  .png-text {
+    display:none;
+  } 
+
+  .container-wrapper{
+    padding:225px 0 150px 7%;
   }
 
+  .about-tech .about-me{
+    width:85dvw;
+  }
 }
 
 @media(max-width:400px){
@@ -919,21 +920,4 @@ textarea:valid ~ label {
     height: 350px;
   }
 
-  .png-text {
-    font-size: 100px;
-    line-height:80px;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    font-weight: 800;
-    font-family: Poppins;
-    position: absolute;
-    top: -115px;
-    right: 50%;
-    left: 50%;
-    color: #272a2e;
-    direction:ltr;
-    rotate: 90deg;
-    user-select: none;
-  }
 }
